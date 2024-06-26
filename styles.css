@@ -249,6 +249,9 @@ section{
     .rule {
         display: none; /* Hide the vertical rule on small screens */
     }
+    .f-pacs p{
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
