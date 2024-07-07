@@ -1,20 +1,40 @@
-// NAVBAR FUNCTIONALITY
-const overlay = document.getElementById('overlay');
+//NavBAr Functionality
+
 const menu = document.getElementById('menu');
 const hamburger = document.getElementById('hamburger');
 const btns = document.getElementById('btns');
+const overlay = document.getElementById('overlay');
 
+// Add event listener to hamburger icon
 hamburger.addEventListener('click', function() {
     menu.classList.toggle('show');
     btns.classList.toggle('show');
-    overlay.classList.toggle("show");
+    overlay.classList.toggle('show');
 });
 
-overlay.addEventListener("click", () => {
-  overlay.classList.toggle("show");
-  button.classList.toggle("show");
-  menu.classList.toggle("show");
+// Add event listener to each link inside the menu
+const links = menu.querySelectorAll('a');
+links.forEach(link => {
+    link.addEventListener('click', function() {
+        // Hide menu, buttons, and overlay
+        menu.classList.remove('show');
+        btns.classList.remove('show');
+        overlay.classList.remove('show');
+    });
 });
+
+// Add event listener to each button inside btns
+const buttons = btns.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Hide menu, buttons, and overlay
+        menu.classList.remove('show');
+        btns.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+});
+
+
 
 
 function scrollToSection(sectionId) {
